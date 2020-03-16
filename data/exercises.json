@@ -16,5 +16,59 @@
       "sets": "3",
       "duration": ""
     }
+  },
+  {
+    "id": 1,
+    "name": "Pull up",
+    "difficulty": ["begginer", "intermediate", "advanced"],
+    "muscleGroups": ["lats", "biceps"],
+    "description": "lorem ipsum",
+    "image": "randomurl",
+    "video": "randomVideoUrl",
+    "intensity": 5,
+    "isolation": "compound",
+    "equipement": ["body", "dumbell"],
+    "calorieBurn": "low",
+    "unit": {
+      "type": "reps",
+      "sets": "3",
+      "duration": ""
+    },
+    {
+      "id": 2,
+      "name": "Pull up",
+      "difficulty": ["begginer", "intermediate", "advanced"],
+      "muscleGroups": ["lats", "biceps"],
+      "description": "lorem ipsum",
+      "image": "randomurl",
+      "video": "randomVideoUrl",
+      "intensity": 5,
+      "isolation": "compound",
+      "equipement": ["body", "dumbell"],
+      "calorieBurn": "low",
+      "unit": {
+        "type": "reps",
+        "sets": "3",
+        "duration": ""
+      }
+    },
+    {
+      "id": 3,
+      "name": "Pull up",
+      "difficulty": ["begginer", "intermediate", "advanced"],
+      "muscleGroups": ["lats", "biceps"],
+      "description": "lorem ipsum",
+      "image": "randomurl",
+      "video": "randomVideoUrl",
+      "intensity": 5,
+      "isolation": "compound",
+      "equipement": ["body", "dumbell"],
+      "calorieBurn": "low",
+      "unit": {
+        "type": "reps",
+        "sets": "3",
+        "duration": ""
+      }
+    }
   }
 ]

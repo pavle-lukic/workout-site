@@ -54,11 +54,52 @@
     <!-- Main area -->
     <div class="container-fluid p-0 bg-info">
       <div class="row">
-        <div class="col-lg-3 m-0 bg-dark">
+        <!-- added exercices -->
+        <div class="col-lg-3 m-0 bg-dark ">
           <h2 class="text-light ml-2">List of added exercises</h2>
-          <ul id="exerciseList" class="list-group"></ul>
+          <ul id="exerciseList" class="list-group ml-3"></ul>
         </div>
+        <!-- Exercice Display -->
         <div class="col-lg-9 m-0 bg-secondary">
+          <!-- filter area -->
+          <div class="row justify-content-center mt-2">
+            <form class="form-inline">
+              <input
+                type="search"
+                class="form-control mb-2 mr-sm-2"
+                id="searchBar"
+                placeholder="search"
+              />
+
+              <label class="sr-only" for="inlineFormInputGroupUsername2"
+                >Username</label
+              >
+              <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">@</div>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inlineFormInputGroupUsername2"
+                  placeholder="Username"
+                />
+              </div>
+
+              <div class="form-check mb-2 mr-sm-2">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineFormCheck"
+                />
+                <label class="form-check-label" for="inlineFormCheck">
+                  Remember me
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            </form>
+          </div>
           <div class="row pt-3" id="exerciseArea"></div>
         </div>
       </div>

@@ -1,10 +1,10 @@
 $(document).ready(function() {
   const url = '../data/exercises.json';
   const axiosTest = axios.get;
-
+  const searchBar = document.getElementById('searchBar');
   let exerciseHtml = '';
   let exerciseArea = document.getElementById('exerciseArea');
-  const writeexercises = function(exercise) {
+  const writeExercises = function(exercise) {
     return `<div class="col-sm-6 mb-2">
     <div class="card">
       <div class="card-body">
@@ -17,50 +17,64 @@ $(document).ready(function() {
   };
   let exText = '';
   const exArray = [];
-  const writeSelectedexercises = function() {
+
+  function writeEachExercise() {
+    for (let ex of exArray) {
+      exText += `<li class="list-group-item list-group-item-primary p-1 mb-2">${ex}<button class="btn btn-danger m-2 removal" data="${ex}">X</button></li>`;
+    }
+  }
+
+  const writeSelectedExercises = function() {
     let listArea = document.getElementById('exerciseList');
+    exText = '';
+    writeEachExercise();
     listArea.innerHTML = exText;
-    document.addEventListener;
+    addRemoval();
   };
 
   // function for adding remove option for buttons
-  const addRemoval = function() {
-    console.log('hello');
+  const addRemoval = () => {
+    document.querySelectorAll('.removal').forEach(button => {
+      button.addEventListener('click', () => {
+        let exName = button.getAttribute('data');
+        if (exArray.indexOf(exName) != -1) {
+          exArray.splice(exArray.indexOf(exName), 1);
+          writeSelectedExercises();
+        }
+      });
+    });
   };
+
+  // writing list
+
   // adding exercises to the array after clicking
-  const addexercise = function(value) {
+  const addExercise = function(value) {
     if (exArray.indexOf(value) != -1) {
       return false;
     } else {
       exArray.push(value);
-      console.log(exArray);
     }
-    exText = '';
-    for (let ex of exArray) {
-      console.log(ex);
-      exText += `<li class="list-group-item list-group-item-primary p-1">${ex}<button class="btn btn-danger m-2 removal" data="${ex}">X</button></li>`;
-    }
-    writeSelectedexercises();
-    addRemoval();
+    writeSelectedExercises();
   };
 
-  // AJAX request to JSON object
-  axiosTest(url).then(data => {
-    const exercises = [...data.data];
-    console.log(exercises);
-    exercises.forEach(value => {
-      exerciseHtml += writeexercises(value);
-    });
-    exerciseArea.innerHTML = exerciseHtml;
-
-    // add event listeners for clicking a button
-    exercises.forEach(value => {
+  // adding events to Exercise buttons
+  function eventAdd(values) {
+    values.forEach(value => {
       document.addEventListener('click', function(e) {
         if (e.target && e.target.id == `${value.id}`) {
-          addexercise(value.name);
-          console.log('clicked id is', value.id);
+          addExercise(value.name);
         }
       });
     });
+  }
+  // AJAX request to JSON object
+  axiosTest(url).then(data => {
+    const exercises = [...data.data];
+    exercises.forEach(value => {
+      exerciseHtml += writeExercises(value);
+    });
+    exerciseArea.innerHTML = exerciseHtml;
+    eventAdd(exercises);
+    // add event listeners for clicking a button
   });
 });

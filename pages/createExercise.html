@@ -12,8 +12,57 @@
     />
   </head>
   <body>
-    <h1>Create Exercise</h1>
-
+    <header>
+      <nav
+        class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center"
+      >
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- Main area -->
+    <div class="container-fluid p-0 bg-info">
+      <div class="row">
+        <div class="col-lg-3 m-0 bg-dark">
+          <h2 class="text-light ml-2">List of added exercises</h2>
+          <ul id="exerciseList" class="list-group"></ul>
+        </div>
+        <div class="col-lg-9 m-0 bg-secondary">
+          <div class="row pt-3" id="exerciseArea"></div>
+        </div>
+      </div>
+    </div>
     <!-- SCRIPTS -->
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -30,5 +79,7 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../src/js/createExercise.js"></script>
   </body>
 </html>

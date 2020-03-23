@@ -58,15 +58,7 @@ $(document).ready(function() {
   };
 
   // adding events to Exercise buttons
-  function eventAdd(values) {
-    values.forEach(value => {
-      document.addEventListener('click', function(e) {
-        if (e.target && e.target.id == `${value.id}`) {
-          addExercise(value.name);
-        }
-      });
-    });
-  }
+
   // AJAX request to JSON object
   axiosTest(url).then(data => {
     const exercises = [...data.data];

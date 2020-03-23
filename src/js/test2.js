@@ -1,6 +1,7 @@
 class Exercise {
   constructor(arr) {
     this.arr = arr;
+    this.filteredArr = arr;
   }
   addEx(ex) {
     if (this.arr.indexOf(ex) == -1) {
@@ -21,12 +22,13 @@ class Exercise {
   }
 }
 class UI {
-  static startUI() {
+  static startUI(obj) {
     fetch('../data/exercises.json')
       .then(res => res.json())
       .then(data => {
         ex.arr = data;
-        this.displayEx(ex.arr);
+        ex.filteredArr = data;
+        this.displayEx(obj.arr);
       });
   }
   // display all the exercises
@@ -34,7 +36,7 @@ class UI {
     let html = '';
     const exArea = document.getElementById('exerciseArea');
     arr.forEach(value => {
-      html += `<div class="col-sm-6 mb-2">
+      html += `<div class="col-sm-3 mb-2">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">${value.name}</h5>
@@ -76,12 +78,27 @@ class UI {
         .querySelector('#exerciseList')
         .addEventListener('click', function(e) {
           if (e.target && e.target.getAttribute('data') == `${value.id}`) {
-            console.log(value);
             addedEx.removeEx(value);
-            console.log(addedEx.arr);
           }
         });
     });
+  }
+  // filter displayed exercices based on search inputs
+  static getFilterInputs(info) {
+    ex.filteredArr = ex.arr;
+    let calorie = '';
+    let cal = document.getElementById('inlineFormCheck');
+    if (cal.checked) {
+      ex.filteredArr = ex.filteredArr.filter(values => {
+        return values.calorieBurn == cal.value;
+      });
+    }
+    let inputs = info.target.value.toLowerCase();
+    console.log(inputs);
+    ex.filteredArr = ex.filteredArr.filter(values => {
+      return values.name.toLowerCase().indexOf(inputs) > -1;
+    });
+    this.displayEx(ex.filteredArr);
   }
 }
 
@@ -92,4 +109,9 @@ class Storage {
 }
 const ex = new Exercise([]);
 const addedEx = new Exercise([]);
-document.addEventListener('DOMContentLoaded', UI.startUI());
+const searchBar = document.getElementById('searchBar');
+document.addEventListener('DOMContentLoaded', UI.startUI(ex));
+
+searchBar.addEventListener('input', function(e) {
+  UI.getFilterInputs(e);
+});

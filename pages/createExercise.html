@@ -10,6 +10,7 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="../src/css/createExercise.css" />
   </head>
   <body>
     <header>
@@ -52,7 +53,7 @@
       </nav>
     </header>
     <!-- Main area -->
-    <div class="container-fluid p-0 bg-info">
+    <div class="container-fluid p-0 bg-info" id="main">
       <div class="row">
         <!-- added exercices -->
         <div class="col-lg-3 m-0 bg-dark ">
@@ -75,9 +76,6 @@
                 >Username</label
               >
               <div class="input-group mb-2 mr-sm-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">@</div>
-                </div>
                 <input
                   type="text"
                   class="form-control"
@@ -91,9 +89,10 @@
                   class="form-check-input"
                   type="checkbox"
                   id="inlineFormCheck"
+                  value="low"
                 />
                 <label class="form-check-label" for="inlineFormCheck">
-                  Remember me
+                  Calorie burn
                 </label>
               </div>
 

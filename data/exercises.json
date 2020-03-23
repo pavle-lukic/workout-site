@@ -100,6 +100,42 @@
     "intensity": 5,
     "isolation": "compound",
     "equipement": ["body", "dumbell"],
+    "calorieBurn": "not",
+    "unit": {
+      "type": "reps",
+      "sets": "3",
+      "duration": ""
+    }
+  },
+  {
+    "id": 6,
+    "name": "Exercise7",
+    "difficulty": ["begginer", "intermediate", "advanced"],
+    "muscleGroups": ["lats", "biceps"],
+    "description": "lorem ipsum",
+    "image": "randomurl",
+    "video": "randomVideoUrl",
+    "intensity": 5,
+    "isolation": "compound",
+    "equipement": ["body", "dumbell"],
+    "calorieBurn": "low",
+    "unit": {
+      "type": "reps",
+      "sets": "3",
+      "duration": ""
+    }
+  },
+  {
+    "id": 7,
+    "name": "Exercise8",
+    "difficulty": ["begginer", "intermediate", "advanced"],
+    "muscleGroups": ["lats", "biceps"],
+    "description": "lorem ipsum",
+    "image": "randomurl",
+    "video": "randomVideoUrl",
+    "intensity": 5,
+    "isolation": "compound",
+    "equipement": ["body", "dumbell"],
     "calorieBurn": "low",
     "unit": {
       "type": "reps",

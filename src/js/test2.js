@@ -31,6 +31,8 @@ class UI {
         this.displayEx(obj.arr);
       });
   }
+
+  static displayFilterArea() {}
   // display all the exercises
   static displayEx(arr) {
     let html = '';
@@ -86,13 +88,6 @@ class UI {
   // filter displayed exercices based on search inputs
   static getFilterInputs(info) {
     ex.filteredArr = ex.arr;
-    let calorie = '';
-    let cal = document.getElementById('inlineFormCheck');
-    if (cal.checked) {
-      ex.filteredArr = ex.filteredArr.filter(values => {
-        return values.calorieBurn == cal.value;
-      });
-    }
     let inputs = info.target.value.toLowerCase();
     console.log(inputs);
     ex.filteredArr = ex.filteredArr.filter(values => {

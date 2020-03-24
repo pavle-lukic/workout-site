@@ -9,7 +9,7 @@
     "video": "randomVideoUrl",
     "intensity": 5,
     "isolation": "compound",
-    "equipement": ["body", "dumbell"],
+    "equipment": "body",
     "calorieBurn": "low",
     "unit": {
       "type": "reps",
@@ -27,7 +27,7 @@
     "video": "randomVideoUrl",
     "intensity": 5,
     "isolation": "compound",
-    "equipement": ["body", "dumbell"],
+    "equipment": ["body", "dumbell"],
     "calorieBurn": "low",
     "unit": {
       "type": "reps",
@@ -45,7 +45,7 @@
     "video": "randomVideoUrl",
     "intensity": 5,
     "isolation": "compound",
-    "equipement": ["body", "dumbell"],
+    "equipment": ["body", "dumbell"],
     "calorieBurn": "low",
     "unit": {
       "type": "reps",
@@ -63,7 +63,7 @@
     "video": "randomVideoUrl",
     "intensity": 5,
     "isolation": "compound",
-    "equipement": ["body", "dumbell"],
+    "equipment": ["body", "dumbell"],
     "calorieBurn": "low",
     "unit": {
       "type": "reps",
@@ -81,7 +81,7 @@
     "video": "randomVideoUrl",
     "intensity": 5,
     "isolation": "compound",
-    "equipement": ["body", "dumbell"],
+    "equipment": ["body", "dumbell"],
     "calorieBurn": "low",
     "unit": {
       "type": "reps",
@@ -99,7 +99,7 @@
     "video": "randomVideoUrl",
     "intensity": 5,
     "isolation": "compound",
-    "equipement": ["body", "dumbell"],
+    "equipment": ["body", "dumbell"],
     "calorieBurn": "not",
     "unit": {
       "type": "reps",
@@ -117,7 +117,7 @@
     "video": "randomVideoUrl",
     "intensity": 5,
     "isolation": "compound",
-    "equipement": ["body", "dumbell"],
+    "equipment": ["body", "dumbell"],
     "calorieBurn": "low",
     "unit": {
       "type": "reps",
@@ -135,7 +135,7 @@
     "video": "randomVideoUrl",
     "intensity": 5,
     "isolation": "compound",
-    "equipement": ["body", "dumbell"],
+    "equipment": ["body", "dumbell"],
     "calorieBurn": "low",
     "unit": {
       "type": "reps",

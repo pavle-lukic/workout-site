@@ -3,14 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create Exercise</title>
+    <title>Home</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../src/css/createExercise.css" />
   </head>
   <body>
     <header>
@@ -53,17 +52,17 @@
       </nav>
     </header>
     <!-- Main area -->
-    <div class="container-fluid p-0 bg-secondary overflow-hidden" id="main">
-      <div class="row h-100">
+    <div class="container-fluid p-0 bg-info" id="main">
+      <div class="row">
         <!-- added exercices -->
-        <div class="col-lg-3 m-0 h-auto bg-dark ">
-          <h2 class="text-light ml-2">List of added exercises</h2>
+        <div class="col-lg-3 m-0 bg-dark ">
+          <h2 class="text-light text-center mt-2">List of added exercises</h2>
           <ul id="exerciseList" class="list-group ml-3"></ul>
         </div>
         <!-- Exercice Display -->
-        <div class="container-fluid col-lg-8 bg-secondary">
+        <div class="col-lg-9 m-0 bg-secondary">
           <!-- filter area -->
-          <div class="row justify-content-center ">
+          <div class="row justify-content-center m-2">
             <form class="form-inline">
               <input
                 type="search"
@@ -131,10 +130,10 @@
               <button type="submit" class="btn btn-primary mb-2">Submit</button>
             </form>
           </div>
-          <div class="row pt-3" id="exerciseArea"></div>
         </div>
       </div>
     </div>
+
     <!-- SCRIPTS -->
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -151,8 +150,5 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <!-- <script src="../src/js/createExercise.js"></script> -->
-    <script src="../src/js/test2.js"></script>
   </body>
 </html>

@@ -15,7 +15,7 @@
   <body>
     <header>
       <nav
-        class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center"
+        class="navbar navbar-expand-lg navbar-dark bg-secondary justify-content-center"
       >
         <a class="navbar-brand" href="#">Navbar</a>
         <button
@@ -53,21 +53,28 @@
       </nav>
     </header>
     <!-- Main area -->
-    <div class="container-fluid p-0 bg-secondary overflow-hidden" id="main">
-      <div class="row h-100">
+    <div class="container-fluid p-0 bg-secondary overflow-hidden " id="main">
+      <div class="row w-100">
         <!-- added exercices -->
-        <div class="col-lg-3 m-0 h-auto bg-dark ">
-          <h2 class="text-light ml-2">List of added exercises</h2>
-          <ul id="exerciseList" class="list-group ml-3"></ul>
+        <div class="col-lg-6 m-0 h-auto text-center bg-dark ">
+          <div class="container col-lg-6 mx-auto mt-2 justify-content-center">
+            <img class="img-fluid" src="../src/img/body.png" alt="" srcset="">
+            <h2 class="text-white" id="source">Works</h2>
+          </div>
+          <h2 class="text-light text-center mt-4">List of added exercises</h2>
+          <div class=" mx-auto mt-3 col-lg-4">
+            <ul id="exerciseList" class="list-group"></ul>
+          </div>
+          
         </div>
         <!-- Exercice Display -->
-        <div class="container-fluid col-lg-8 bg-secondary">
+        <div class="container-fluid col-lg-6 bg-dark">
           <!-- filter area -->
-          <div class="row justify-content-center ">
-            <form class="form-inline">
+          <div class="row justify-content-center m-auto border-bottom ">
+            <form class="form-inline m-auto">
               <input
                 type="search"
-                class="form-control m-2"
+                class="form-control m-auto"
                 id="searchBar"
                 placeholder="search"
               />
@@ -103,8 +110,7 @@
                   <option value="machine">Machine</option>
                 </select>
               </div>
-
-              <div class="form-check form-check-inline">
+              <div class=" justify-content-center form-check"><div class="form-check form-check-inline">
                 <input
                   class="form-check-input"
                   type="checkbox"
@@ -127,11 +133,12 @@
                   value="advanced"
                 />
                 <label class="form-check-label text-light">Advanced</label>
-              </div>
+              </div></div>
+              
               <button type="submit" class="btn btn-primary mb-2">Submit</button>
             </form>
           </div>
-          <div class="row pt-3" id="exerciseArea"></div>
+          <div class="row pt-3 justify-content-center m-auto" id="exerciseArea"></div>
         </div>
       </div>
     </div>

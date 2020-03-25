@@ -1,7 +1,7 @@
 [
   {
     "id": 0,
-    "name": "Exercise1",
+    "name": "Pull Up",
     "difficulty": ["begginer", "intermediate", "advanced"],
     "muscleGroups": ["lats", "biceps"],
     "description": "lorem ipsum",
@@ -19,9 +19,9 @@
   },
   {
     "id": 1,
-    "name": "Exercise2",
+    "name": "Bench Press",
     "difficulty": ["begginer", "intermediate", "advanced"],
-    "muscleGroups": ["lats", "biceps"],
+    "muscleGroups": ["chest", "shoulders", "triceps"],
     "description": "lorem ipsum",
     "image": "randomurl",
     "video": "randomVideoUrl",
@@ -37,9 +37,9 @@
   },
   {
     "id": 2,
-    "name": "Exercise3",
+    "name": "Squat",
     "difficulty": ["begginer", "intermediate", "advanced"],
-    "muscleGroups": ["lats", "biceps"],
+    "muscleGroups": ["quads", "glutes"],
     "description": "lorem ipsum",
     "image": "randomurl",
     "video": "randomVideoUrl",

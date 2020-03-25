@@ -11,9 +11,6 @@ class Exercise {
       console.log('already in exercise list');
     }
   }
-  filterEx(arr) {
-    console.log(arr);
-  }
   removeEx(ex) {
     if (this.arr.indexOf(ex) != -1) {
       this.arr.splice(this.arr.indexOf(ex), 1);
@@ -30,6 +27,30 @@ class UI {
         ex.filteredArr = data;
         this.displayEx(obj.arr);
       });
+  }
+  static changeImg() {
+    // get all muscleGroup names and put them in 1 array
+    const allArr = [];
+    ex.arr.forEach(ex => {
+      allArr.push.apply(allArr, ex.muscleGroups);
+    });
+    const setAllArr = [...new Set(allArr)].sort();
+    console.log(setAllArr);
+    // get all curently added muscleGroups and put them in array
+    const arr = [];
+    addedEx.arr.forEach(ex => {
+      arr.push.apply(arr, ex.muscleGroups);
+    });
+    const setArr = [...new Set(arr)];
+    setArr.sort();
+    console.log(setArr);
+    // compare the two arrays
+    const indexedArr = setArr.map(el => {
+      return setAllArr.indexOf(el);
+    });
+    console.log(indexedArr);
+    // concat the indexes into a string and change HTML
+    document.getElementById('source').innerHTML = indexedArr.join('');
   }
 
   static displayFilterArea() {}
@@ -56,10 +77,11 @@ class UI {
     let html = '';
     const exList = document.getElementById('exerciseList');
     arr.forEach(value => {
-      html += `<li class="list-group-item list-group-item-primary p-1 mb-2">${value.name}<button class="btn btn-danger m-2 removal" data="${value.id}">X</button></li>`;
+      html += `<li class="list-group-item d-flex justify-content-between align-items-center col-lg-12 h3"><div class="container-fluid row"><spa class="col-lg-10 pt-1">${value.name}</spa><span class="col-lg-1"><button class="btn btn-danger m-auto" data="${value.id}">X</button></span></div></li>`;
     });
     exList.innerHTML = html;
-    UI.giveEventList(arr);
+    this.changeImg();
+    this.giveEventList(arr);
   }
   // Delegate the events after they have been writen in the DOM
   static giveEventMain(values) {
@@ -98,8 +120,28 @@ class UI {
 }
 
 class Storage {
-  static addToStorage() {
-    console.log('storage');
+  static addToStorage(ex) {
+    const exercises = this.getFromStorage();
+    exercises.push(ex);
+    localStorage.setItem('exercises', JSON.stringify(exercises));
+  }
+  static getFromStorage() {
+    let exercises;
+    if (localStorage.getItem('exercises') === null) {
+      exercises = [];
+    } else {
+      exercises = JSON.parse(localStorage.getItem('exercises'));
+    }
+    return exercises;
+  }
+  static removeFromStorage(id) {
+    const exercices = this.getFromStorage();
+    exercices.forEach((ex, index) => {
+      if (ex.id == id) {
+        exercices.splice(index, 1);
+      }
+    });
+    localStorage.setItem('exercises', JSON.stringify(exercices));
   }
 }
 const ex = new Exercise([]);

@@ -32,14 +32,14 @@ class UI {
     // get all muscleGroup names and put them in 1 array
     const allArr = [];
     ex.arr.forEach(ex => {
-      allArr.push.apply(allArr, ex.muscleGroups);
+      allArr.push.apply(allArr, ex.muscleArea);
     });
     const setAllArr = [...new Set(allArr)].sort();
     console.log(setAllArr);
     // get all curently added muscleGroups and put them in array
     const arr = [];
     addedEx.arr.forEach(ex => {
-      arr.push.apply(arr, ex.muscleGroups);
+      arr.push.apply(arr, ex.muscleArea);
     });
     const setArr = [...new Set(arr)];
     setArr.sort();
@@ -77,7 +77,7 @@ class UI {
     let html = '';
     const exList = document.getElementById('exerciseList');
     arr.forEach(value => {
-      html += `<li class="list-group-item d-flex justify-content-between align-items-center col-lg-12 h3"><div class="container-fluid row"><spa class="col-lg-10 pt-1">${value.name}</spa><span class="col-lg-1"><button class="btn btn-danger m-auto" data="${value.id}">X</button></span></div></li>`;
+      html += `<li class="list-group-item justify-content-between align-items-center col-lg-12 h3"><div class="container-fluid row"><spa class="col-lg-10 pt-1">${value.name}</spa><span class="col-lg-1"><button class="btn btn-danger m-auto" data="${value.id}">X</button></span></div></li>`;
     });
     exList.innerHTML = html;
     this.changeImg();

@@ -1,3 +1,30 @@
+:root {
+  --container-bg-color: #181926;
+  --ligher-color: #2f3340;
+  --light-yellow: #d9c382;
+  --dark-yellow: #a6976a;
+  --light-gray: #f2f2f2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: var(--light-gray);
+}
+
+.parYellow {
+  color: var(--light-yellow);
+}
+.parDYellow {
+  color: var(--dark-yellow);
+}
+.bg-dg {
+  background-color: var(--ligher-color);
+}
+.bg-d {
+  background-color: var(--container-bg-color);
+}
+
 #main {
   height: 2000px;
 }

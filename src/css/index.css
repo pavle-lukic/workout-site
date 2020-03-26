@@ -44,6 +44,13 @@
 .parYellow {
   color: var(--light-yellow);
 }
+.parDYellow {
+  color: var(--dark-yellow);
+}
+
+.bg-dg {
+  background-color: var(--ligher-color);
+}
 
 h1,
 h2,

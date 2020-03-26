@@ -60,7 +60,7 @@ class UI {
     const exArea = document.getElementById('exerciseArea');
     arr.forEach(value => {
       html += `<div class="col-sm-3 mb-2">
-    <div class="card">
+    <div class="card bg-d parYellow border">
       <div class="card-body">
         <h5 class="card-title">${value.name}</h5>
         <p class="card-text">${value.description}</p>
@@ -77,7 +77,7 @@ class UI {
     let html = '';
     const exList = document.getElementById('exerciseList');
     arr.forEach(value => {
-      html += `<li class="list-group-item justify-content-between align-items-center col-lg-12 h3"><div class="container-fluid row"><spa class="col-lg-10 pt-1">${value.name}</spa><span class="col-lg-1"><button class="btn btn-danger m-auto" data="${value.id}">X</button></span></div></li>`;
+      html += `<li class="list-group-item justify-content-between align-items-center col-lg-12 h3 bg-dg border"><div class="container-fluid row"><spa class="col-lg-10 pt-1">${value.name}</spa><span class="col-lg-1"><button class="btn btn-danger m-auto" data="${value.id}">X</button></span></div></li>`;
     });
     exList.innerHTML = html;
     this.changeImg();

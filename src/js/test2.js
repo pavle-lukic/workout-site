@@ -50,7 +50,9 @@ class UI {
     });
     console.log(indexedArr);
     // concat the indexes into a string and change HTML
-    document.getElementById('source').innerHTML = indexedArr.join('');
+    document
+      .getElementById('bodyImage')
+      .setAttribute('src', `../src/img/exImage/body${indexedArr.join('')}.png`);
   }
 
   static displayFilterArea() {}
@@ -59,13 +61,22 @@ class UI {
     let html = '';
     const exArea = document.getElementById('exerciseArea');
     arr.forEach(value => {
-      html += `<div class="col-sm-3 mb-2">
-    <div class="card bg-d parYellow border">
-      <div class="card-body">
-        <h5 class="card-title">${value.name}</h5>
+      html += `<div class="col-sm-12 col-lg-4 col-md-6 my-3 mx-auto">
+    <div class="card bg-dg parYellow border h-100 ">
+      <div class="card-body h-100">
+        <h4 class="card-title text-center parYellow">${value.name}</h4>
         <p class="card-text">${value.description}</p>
-        <button href="#" class="btn btn-primary clickable" id=${value.id} >Add exercise</button>
+        
       </div>
+      <ul class="list-group list-group-flush">
+    <li class="list-group-item bg-dg">Muscle Groups: ${this.joinArrays(
+      value.muscleGroups
+    )}</li>
+    <li class="list-group-item bg-dg">Dapibus ac facilisis in</li>
+    <li class="list-group-item bg-dg"><button href="#" class="btn bg clickable w-100 bg-y" id=${
+      value.id
+    } >Add exercise</button></li>
+  </ul>
     </div>
     </div>`;
     });
@@ -77,7 +88,9 @@ class UI {
     let html = '';
     const exList = document.getElementById('exerciseList');
     arr.forEach(value => {
-      html += `<li class="list-group-item justify-content-between align-items-center col-lg-12 h3 bg-dg border"><div class="container-fluid row"><spa class="col-lg-10 pt-1">${value.name}</spa><span class="col-lg-1"><button class="btn btn-danger m-auto" data="${value.id}">X</button></span></div></li>`;
+      html += `
+      
+      <li class="list-group-item h3 bg-dg border py-2 d-flex justify-content-between align-items-center">${value.name}<button class="btn btn-danger" data="${value.id}">X</button></li>`;
     });
     exList.innerHTML = html;
     this.changeImg();
@@ -116,6 +129,9 @@ class UI {
       return values.name.toLowerCase().indexOf(inputs) > -1;
     });
     this.displayEx(ex.filteredArr);
+  }
+  static joinArrays(arr) {
+    return arr.join(',');
   }
 }
 

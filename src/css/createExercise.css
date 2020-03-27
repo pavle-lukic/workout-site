@@ -24,6 +24,12 @@
 .bg-d {
   background-color: var(--container-bg-color);
 }
+.bg-y {
+  background-color: var(--light-yellow);
+}
+.bg-dy {
+  background-color: var(--dark-yellow);
+}
 
 #main {
   height: 2000px;

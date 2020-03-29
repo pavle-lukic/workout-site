@@ -8,6 +8,7 @@
 
 * {
   margin: 0;
+  font-family: 'Montserrat', sans-serif;
   padding: 0;
   color: var(--light-gray);
 }
@@ -17,6 +18,16 @@
 }
 .parDYellow {
   color: var(--dark-yellow);
+}
+.pardg {
+  color: var(--container-bg-color);
+}
+select option {
+  color: var(--container-bg-color);
+}
+input.chkBox {
+  width: 20px !important;
+  height: 20px !important;
 }
 .bg-dg {
   background-color: var(--ligher-color);
@@ -32,5 +43,5 @@
 }
 
 #main {
-  height: 2000px;
+  height: 100%;
 }

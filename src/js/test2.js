@@ -69,8 +69,8 @@ class UI {
         
       </div>
       <ul class="list-group list-group-flush">
-    <li class="list-group-item bg-dg">Muscle Groups: ${this.joinArrays(
-      value.muscleGroups
+    <li class="list-group-item bg-dg">Muscle Groups: ${value.muscleGroups.join(
+      ', '
     )}</li>
     <li class="list-group-item bg-dg">Dapibus ac facilisis in</li>
     <li class="list-group-item bg-dg"><button href="#" class="btn bg clickable w-100 bg-y" id=${

@@ -73,7 +73,53 @@
           </div>
           <div class="col-lg-12 row my-4">
             <div class="col-lg-6 d-inline">
-              <h2 class="mx-0 d-inline">Statistic</h2>
+              <h2 class="mx-0 d-inline">Information</h2>
+              <div class="col-lg-12">
+                <ul class="list-group bg-dg" id="statistic">
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center bg-dg h5"
+                  >
+                    Number of selected exercises:
+                    <span class="parYellow">14</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center bg-dg h5"
+                  >
+                    Calorie Burn:
+                    <span class="parYellow">Low</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center bg-dg h5"
+                  >
+                    Intensity:
+                    <span class="parYellow">High</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-end align-items-end bg-dg h5"
+                  >
+                    Following Muscle Groups are included:
+                  </li>
+
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center bg-dg h5"
+                  >
+                    -Chest:
+                    <span class="parYellow">1</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center bg-dg h5"
+                  >
+                    -Chest:
+                    <span class="parYellow">1</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center bg-dg h5"
+                  >
+                    -Chest:
+                    <span class="parYellow">1</span>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div class="col-lg-6 d-inline">
               <h2 class="text-light text-center d-inline">
@@ -92,25 +138,37 @@
               <div
                 class="col-lg-12 d-flex my-2 flex-wrap justify-content-center"
               >
-                <select class="form-control col-md-12 col-lg-4 my-2 mx-2" id="">
+                <select
+                  class="form-control col-md-12 col-lg-4 col-sm-12 my-2 mx-2"
+                  id="movement"
+                >
                   <option value="any">Select Movement Type</option>
                   <option value="compound">Compound</option>
                   <option value="isolation">Isolation</option>
                 </select>
-                <select class="form-control col-md-12 col-lg-4 my-2 mx-2" id="">
+                <select
+                  class="form-control col-md-12 col-lg-4 col-sm-12 my-2 mx-2"
+                  id="calorie"
+                >
                   <option value="any">Select Calorie Burn</option>
                   <option value="low">Low</option>
                   <option value="medium">Medium</option>
                   <option value="high">High</option>
                 </select>
-                <select class="form-control col-md-12 my-2 col-lg-4 mx-2" id="">
-                  <option value="any">Select Equipement Type</option>
+                <select
+                  class="form-control col-md-12 my-2 col-sm-12 col-lg-4 mx-2"
+                  id="equipment"
+                >
+                  <option value="any">Select Equipment Type</option>
                   <option value="dumbbells">Dumbbells</option>
-                  <option value="bar">Bar</option>
+                  <option value="barbell">Barbell</option>
                   <option value="machine">Machine</option>
-                  <option value="machine">Body</option>
+                  <option value="body">Body</option>
                 </select>
-                <select class="form-control col-md-12 my-2 col-lg-4 mx-2" id="">
+                <select
+                  class="form-control col-md-12 col-sm-12 my-2 col-lg-4 mx-2"
+                  id="diff"
+                >
                   <option value="any">Select Difficulty</option>
                   <option value="begginer">Begginer</option>
                   <option value="intermediate">Intermediate</option>
@@ -121,17 +179,21 @@
               <div class="col-lg-12 d-flex flex-wrap justify-content-center">
                 <input
                   type="search"
-                  class="form-control mr-2 col-lg-3"
+                  class="form-control col-md-12 col-sm-12 col-lg-4 mx-2 mb-3"
                   id="searchBar"
                   placeholder="Search"
-                /><button type="submit" class="btn bg-y ml-2 col-lg-3">
+                /><button
+                  type="submit"
+                  class="btn bg-y form-control col-md-12 col-sm-12 col-lg-4 mx-2"
+                  id="filter"
+                >
                   Filter
                 </button>
               </div>
             </form>
           </div>
           <div
-            class="row pt-3 justify-content-center m-auto border-top"
+            class="row pt-3 justify-content-start m-auto border-top"
             id="exerciseArea"
           ></div>
         </div>

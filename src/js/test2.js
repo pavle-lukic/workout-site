@@ -7,8 +7,6 @@ class Exercise {
     if (this.arr.indexOf(ex) == -1) {
       this.arr.push(ex);
       UI.displayList(addedEx.arr);
-    } else {
-      console.log('already in exercise list');
     }
   }
   removeEx(ex) {
@@ -35,7 +33,6 @@ class UI {
       allArr.push.apply(allArr, ex.muscleArea);
     });
     const setAllArr = [...new Set(allArr)].sort();
-    console.log(setAllArr);
     // get all curently added muscleGroups and put them in array
     const arr = [];
     addedEx.arr.forEach(ex => {
@@ -43,26 +40,60 @@ class UI {
     });
     const setArr = [...new Set(arr)];
     setArr.sort();
-    console.log(setArr);
     // compare the two arrays
     const indexedArr = setArr.map(el => {
       return setAllArr.indexOf(el);
     });
-    console.log(indexedArr);
     // concat the indexes into a string and change HTML
     document
       .getElementById('bodyImage')
       .setAttribute('src', `../src/img/exImage/body${indexedArr.join('')}.png`);
   }
 
-  static displayFilterArea() {}
+  static displayFilterArea() {
+    const mov = document.getElementById('movement');
+    const cal = document.getElementById('calorie');
+    const eq = document.getElementById('equipment');
+    const diff = document.getElementById('diff');
+    let movVal = mov.options[mov.selectedIndex].value;
+
+    let calVal = cal.options[cal.selectedIndex].value;
+
+    let eqVal = eq.options[eq.selectedIndex].value;
+    console.log(eqVal);
+    let diffVal = diff.options[diff.selectedIndex].value;
+
+    const filteredArr = ex.arr.filter(exercise => {
+      if (diffVal == 'any') {
+        diffVal = true;
+      }
+      if (eqVal == 'any') {
+        eqVal = true;
+      }
+      if (calVal == 'any') {
+        calVal = true;
+      }
+      if (movVal == 'any') {
+        movVal = true;
+      }
+      console.log(movVal, calVal, eqVal, diffVal);
+      return (
+        (exercise.isolation == movVal || movVal == true) &&
+        (exercise.calorieBurn == calVal || calVal == true) &&
+        (exercise.equipment == eqVal || eqVal == true) &&
+        (exercise.difficulty.indexOf(diffVal) != -1 || diffVal == true)
+      );
+    });
+    console.log(filteredArr);
+    this.displayEx(filteredArr);
+  }
   // display all the exercises
   static displayEx(arr) {
     let html = '';
     const exArea = document.getElementById('exerciseArea');
     arr.forEach(value => {
-      html += `<div class="col-sm-12 col-lg-4 col-md-6 my-3 mx-auto">
-    <div class="card bg-dg parYellow border h-100 ">
+      html += `<div class="col-sm-12 col-lg-4 col-md-6 my-3">
+    <div class="card bg-dg parYellow h-100 ">
       <div class="card-body h-100">
         <h4 class="card-title text-center parYellow">${value.name}</h4>
         <p class="card-text">${value.description}</p>
@@ -90,11 +121,97 @@ class UI {
     arr.forEach(value => {
       html += `
       
-      <li class="list-group-item h3 bg-dg border py-2 d-flex justify-content-between align-items-center">${value.name}<button class="btn btn-danger" data="${value.id}">X</button></li>`;
+      <li class="list-group-item h3 bg-dg py-2 d-flex justify-content-between align-items-center">${value.name}<button class="btn btn-danger" data="${value.id}">X</button></li>`;
     });
     exList.innerHTML = html;
     this.changeImg();
+    this.displayInformation(arr);
     this.giveEventList(arr);
+    this.displayFilterArea();
+  }
+
+  static displayInformation(arr) {
+    let html = '';
+    const info = document.getElementById('statistic');
+    // function to give average value of calorie burn
+    const cal = function(item) {
+      const calObj = {};
+      item.forEach(value => {
+        calObj[value.calorieBurn] = 1 + (calObj[value.calorieBurn] || 0);
+      });
+      let max = 0;
+      let val = '';
+      if (Object.keys(calObj).length === 0) {
+        val = 'None';
+      }
+      for (let prop in calObj) {
+        if (calObj[prop] >= max) {
+          max = calObj[prop];
+          val = prop;
+        }
+      }
+      return val.toUpperCase();
+    };
+    const ex = function(item) {
+      const exObj = {};
+      let html = '';
+      item.forEach(value => {
+        value.muscleGroups.forEach(muscle => {
+          exObj[muscle] = 1 + (exObj[muscle] || 0);
+        });
+      });
+      if (Object.keys(exObj).length === 0) {
+        html += `<li class="list-group-item d-flex justify-content-between align-items-center bg-dg h5" >
+        No exercises have been selected!
+      </li>`;
+      }
+      for (let key in exObj) {
+        if (exObj.hasOwnProperty(key)) {
+          html += `<li class="list-group-item d-flex justify-content-between align-items-center bg-dg h5" >
+          - ${key.charAt(0).toUpperCase() +
+            key.substring(1)}: <span class="parYellow font-weight-bold">${
+            exObj[key]
+          }</span>
+        </li>`;
+        }
+      }
+      return html;
+    };
+
+    // calc average intensity of exercise
+    const intens = function(arr) {
+      let totalIntensity = 0;
+      arr.forEach(value => {
+        totalIntensity += value.intensity;
+      });
+      if (totalIntensity / arr.length < 3) {
+        return 'Low';
+      } else if (totalIntensity / arr.length < 7) {
+        return 'Medium';
+      } else if (totalIntensity / arr.length) {
+        return 'High';
+      } else return 'None';
+    };
+    // formating the html
+    html += ` <li class="list-group-item d-flex justify-content-between align-items-center bg-dg h5">
+    Number of selected exercises:<span class="parYellow">${arr.length}</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center bg-dg h5"> 
+    Calorie Burn:<span class="parYellow font-weight-bold">${cal(arr)}</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center bg-dg h5">
+    Intensity:<span class="parYellow font-weight-bold">${intens(
+      arr
+    ).toUpperCase()}</span>
+   </li>
+   <li class="list-group-item d-flex justify-content-beggining align-items-end bg-dg h5">
+   Following Muscle Groups are included:
+  </li>
+  ${ex(arr)}`;
+
+    // function to give intensity value done
+    // function to get number of each musle groups affected
+    info.innerHTML = html;
   }
   // Delegate the events after they have been writen in the DOM
   static giveEventMain(values) {
@@ -124,47 +241,22 @@ class UI {
   static getFilterInputs(info) {
     ex.filteredArr = ex.arr;
     let inputs = info.target.value.toLowerCase();
-    console.log(inputs);
+
     ex.filteredArr = ex.filteredArr.filter(values => {
       return values.name.toLowerCase().indexOf(inputs) > -1;
     });
     this.displayEx(ex.filteredArr);
   }
-  static joinArrays(arr) {
-    return arr.join(',');
-  }
 }
 
-class Storage {
-  static addToStorage(ex) {
-    const exercises = this.getFromStorage();
-    exercises.push(ex);
-    localStorage.setItem('exercises', JSON.stringify(exercises));
-  }
-  static getFromStorage() {
-    let exercises;
-    if (localStorage.getItem('exercises') === null) {
-      exercises = [];
-    } else {
-      exercises = JSON.parse(localStorage.getItem('exercises'));
-    }
-    return exercises;
-  }
-  static removeFromStorage(id) {
-    const exercices = this.getFromStorage();
-    exercices.forEach((ex, index) => {
-      if (ex.id == id) {
-        exercices.splice(index, 1);
-      }
-    });
-    localStorage.setItem('exercises', JSON.stringify(exercices));
-  }
-}
 const ex = new Exercise([]);
 const addedEx = new Exercise([]);
 const searchBar = document.getElementById('searchBar');
 document.addEventListener('DOMContentLoaded', UI.startUI(ex));
-
+document.getElementById('filter').addEventListener('click', e => {
+  e.preventDefault();
+  UI.displayFilterArea();
+});
 searchBar.addEventListener('input', function(e) {
   UI.getFilterInputs(e);
 });

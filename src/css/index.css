@@ -47,9 +47,21 @@
 .parDYellow {
   color: var(--dark-yellow);
 }
+.pardg {
+  color: var(--container-bg-color);
+}
+.parg {
+  color: var(--light-gray);
+}
 
 .bg-dg {
   background-color: var(--ligher-color);
+}
+.bg-y {
+  background-color: var(--light-yellow);
+}
+.bg-dy {
+  background-color: var(--dark-yellow);
 }
 
 h1,

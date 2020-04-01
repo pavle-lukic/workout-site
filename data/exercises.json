@@ -29,8 +29,8 @@
     "video": "randomVideoUrl",
     "intensity": 5,
     "isolation": "compound",
-    "equipment": ["body", "dumbell"],
-    "calorieBurn": "low",
+    "equipment": "barbell",
+    "calorieBurn": "high",
     "unit": {
       "type": "reps",
       "sets": "3",
@@ -48,8 +48,8 @@
     "video": "randomVideoUrl",
     "intensity": 5,
     "isolation": "compound",
-    "equipment": ["body", "dumbell"],
-    "calorieBurn": "low",
+    "equipment": "barbell",
+    "calorieBurn": "medium",
     "unit": {
       "type": "reps",
       "sets": "3",
@@ -59,7 +59,7 @@
   {
     "id": 3,
     "name": "Deadlift",
-    "difficulty": ["begginer", "intermediate", "advanced"],
+    "difficulty": ["intermediate", "advanced"],
     "muscleGroups": ["lower back", "glutes", "hamstrings", "traps"],
     "muscleArea": ["lower-back", "legs"],
     "description": "lorem ipsum",
@@ -67,7 +67,7 @@
     "video": "randomVideoUrl",
     "intensity": 5,
     "isolation": "compound",
-    "equipment": ["body", "dumbell"],
+    "equipment": "barbell",
     "calorieBurn": "low",
     "unit": {
       "type": "reps",
@@ -86,7 +86,7 @@
     "video": "randomVideoUrl",
     "intensity": 5,
     "isolation": "compound",
-    "equipment": ["body", "dumbell"],
+    "equipment": "barbell",
     "calorieBurn": "low",
     "unit": {
       "type": "reps",
@@ -105,7 +105,7 @@
     "video": "randomVideoUrl",
     "intensity": 5,
     "isolation": "compound",
-    "equipment": ["body", "dumbell"],
+    "equipment": "body",
     "calorieBurn": "not",
     "unit": {
       "type": "reps",
@@ -124,7 +124,7 @@
     "video": "randomVideoUrl",
     "intensity": 5,
     "isolation": "compound",
-    "equipment": ["body", "dumbell"],
+    "equipment": "barbell",
     "calorieBurn": "low",
     "unit": {
       "type": "reps",
@@ -143,7 +143,7 @@
     "video": "randomVideoUrl",
     "intensity": 5,
     "isolation": "compound",
-    "equipment": ["body", "dumbell"],
+    "equipment": "body",
     "calorieBurn": "low",
     "unit": {
       "type": "reps",
@@ -162,7 +162,7 @@
     "video": "randomVideoUrl",
     "intensity": 5,
     "isolation": "compound",
-    "equipment": ["body", "dumbell"],
+    "equipment": "barbell",
     "calorieBurn": "low",
     "unit": {
       "type": "reps",
@@ -181,7 +181,7 @@
     "video": "randomVideoUrl",
     "intensity": 5,
     "isolation": "compound",
-    "equipment": ["body", "dumbell"],
+    "equipment": "barbell",
     "calorieBurn": "low",
     "unit": {
       "type": "reps",
@@ -200,7 +200,7 @@
     "video": "randomVideoUrl",
     "intensity": 5,
     "isolation": "compound",
-    "equipment": ["body", "dumbell"],
+    "equipment": "body",
     "calorieBurn": "low",
     "unit": {
       "type": "reps",
@@ -219,7 +219,7 @@
     "video": "randomVideoUrl",
     "intensity": 5,
     "isolation": "compound",
-    "equipment": ["body", "dumbell"],
+    "equipment": "body",
     "calorieBurn": "low",
     "unit": {
       "type": "reps",
@@ -238,7 +238,7 @@
     "video": "randomVideoUrl",
     "intensity": 5,
     "isolation": "compound",
-    "equipment": ["body", "dumbell"],
+    "equipment": "dumbbell",
     "calorieBurn": "low",
     "unit": {
       "type": "reps",

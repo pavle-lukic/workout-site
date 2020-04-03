@@ -92,19 +92,23 @@ class UI {
     let html = '';
     const exArea = document.getElementById('exerciseArea');
     arr.forEach(value => {
-      html += `<div class="col-sm-12 col-lg-4 col-md-6 my-3">
-    <div class="card bg-dg parYellow h-100 ">
+      html += `<div class="col-sm-12 col-lg-4 col-md-6 my-2">
+    <div class="card bg-dg parYellow h-100 my-0 ">
       <div class="card-body h-100">
-        <h4 class="card-title text-center parYellow">${value.name}</h4>
-        <p class="card-text">${value.description}</p>
+        <h4 class="card-title text-center parYellow font-weight-bold">${
+          value.name
+        }</h4>
+        <p class="card-text"><span class="parYellow ">Description: </span>${
+          value.description
+        }</p>
         
       </div>
       <ul class="list-group list-group-flush">
-    <li class="list-group-item bg-dg">Muscle Groups: ${value.muscleGroups.join(
+    <li class="list-group-item bg-dg"><span class="parYellow">Muscle Groups: </span>${value.muscleGroups.join(
       ', '
     )}</li>
-    <li class="list-group-item bg-dg">Dapibus ac facilisis in</li>
-    <li class="list-group-item bg-dg"><button href="#" class="btn bg clickable w-100 bg-y" id=${
+    
+    <li class="list-group-item bg-dg"><button href="#" class="btn bg clickable w-100 font-weight-bold bg-y" id=${
       value.id
     } >Add exercise</button></li>
   </ul>

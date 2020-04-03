@@ -3,172 +3,118 @@
     "id": 0,
     "name": "Pull Up",
     "difficulty": ["begginer", "intermediate", "advanced"],
-    "muscleGroups": ["lats", "biceps"],
+    "muscleGroups": ["Lats", "Biceps"],
     "muscleArea": ["upper-back", "arms"],
-    "description": "lorem ipsum",
-    "image": "randomurl",
-    "video": "randomVideoUrl",
-    "intensity": 5,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 8,
     "isolation": "compound",
     "equipment": "body",
-    "calorieBurn": "low",
-    "unit": {
-      "type": "reps",
-      "sets": "3",
-      "duration": ""
-    }
+    "calorieBurn": "low"
   },
   {
     "id": 1,
     "name": "Bench Press",
     "difficulty": ["begginer", "intermediate", "advanced"],
-    "muscleGroups": ["chest", "shoulders", "triceps"],
+    "muscleGroups": ["Chest", "Shoulders", "Triceps"],
     "muscleArea": ["upper-front", "arms"],
-    "description": "lorem ipsum",
-    "image": "randomurl",
-    "video": "randomVideoUrl",
-    "intensity": 5,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 8,
     "isolation": "compound",
     "equipment": "barbell",
-    "calorieBurn": "high",
-    "unit": {
-      "type": "reps",
-      "sets": "3",
-      "duration": ""
-    }
+    "calorieBurn": "high"
   },
   {
     "id": 2,
     "name": "High-Bar Squat",
     "difficulty": ["begginer", "intermediate", "advanced"],
-    "muscleGroups": ["quads", "glutes"],
+    "muscleGroups": ["Quads", "Glutes"],
     "muscleArea": ["legs"],
-    "description": "lorem ipsum",
-    "image": "randomurl",
-    "video": "randomVideoUrl",
-    "intensity": 5,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 8,
     "isolation": "compound",
     "equipment": "barbell",
-    "calorieBurn": "medium",
-    "unit": {
-      "type": "reps",
-      "sets": "3",
-      "duration": ""
-    }
+    "calorieBurn": "medium"
   },
   {
     "id": 3,
     "name": "Deadlift",
     "difficulty": ["intermediate", "advanced"],
-    "muscleGroups": ["lower back", "glutes", "hamstrings", "traps"],
+    "muscleGroups": ["Lower back", "Glutes", "Hamstrings", "Traps"],
     "muscleArea": ["lower-back", "legs"],
-    "description": "lorem ipsum",
-    "image": "randomurl",
-    "video": "randomVideoUrl",
-    "intensity": 5,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 10,
     "isolation": "compound",
     "equipment": "barbell",
-    "calorieBurn": "low",
-    "unit": {
-      "type": "reps",
-      "sets": "3",
-      "duration": ""
-    }
+    "calorieBurn": "low"
   },
   {
     "id": 4,
     "name": "Romanian Deadlift",
-    "difficulty": ["begginer", "intermediate", "advanced"],
-    "muscleGroups": ["lower back", "glutes", "hamstrings", "traps"],
+    "difficulty": ["begginer", "intermediate"],
+    "muscleGroups": ["Lower back", "Glutes", "Hamstrings", "Traps"],
     "muscleArea": ["lower-back", "legs"],
-    "description": "lorem ipsum",
-    "image": "randomurl",
-    "video": "randomVideoUrl",
-    "intensity": 5,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 6,
     "isolation": "compound",
     "equipment": "barbell",
-    "calorieBurn": "low",
-    "unit": {
-      "type": "reps",
-      "sets": "3",
-      "duration": ""
-    }
+    "calorieBurn": "low"
   },
   {
     "id": 5,
     "name": "Glute Bridge",
     "difficulty": ["begginer", "intermediate", "advanced"],
-    "muscleGroups": ["glutes", "hamstrings"],
+    "muscleGroups": ["Glutes", "Hamstrings"],
     "muscleArea": ["legs"],
-    "description": "lorem ipsum",
-    "image": "randomurl",
-    "video": "randomVideoUrl",
-    "intensity": 5,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 3,
     "isolation": "compound",
     "equipment": "body",
-    "calorieBurn": "not",
-    "unit": {
-      "type": "reps",
-      "sets": "3",
-      "duration": ""
-    }
+    "calorieBurn": "low"
   },
   {
     "id": 6,
     "name": "Barbell Hip Thrust",
-    "difficulty": ["begginer", "intermediate", "advanced"],
-    "muscleGroups": ["glutes", "hamstrings"],
+    "difficulty": ["intermediate", "advanced"],
+    "muscleGroups": ["Glutes", "Hamstrings"],
     "muscleArea": ["legs"],
-    "description": "lorem ipsum",
-    "image": "randomurl",
-    "video": "randomVideoUrl",
-    "intensity": 5,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 4,
     "isolation": "compound",
     "equipment": "barbell",
-    "calorieBurn": "low",
-    "unit": {
-      "type": "reps",
-      "sets": "3",
-      "duration": ""
-    }
+    "calorieBurn": "low"
   },
   {
     "id": 7,
     "name": "Chin Up",
-    "difficulty": ["begginer", "intermediate", "advanced"],
-    "muscleGroups": ["lats", "biceps"],
+    "difficulty": ["begginer", "intermediate"],
+    "muscleGroups": ["Lats", "Biceps"],
     "muscleArea": ["upper-back", "arms"],
-    "description": "lorem ipsum",
-    "image": "randomurl",
-    "video": "randomVideoUrl",
-    "intensity": 5,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 7,
     "isolation": "compound",
     "equipment": "body",
-    "calorieBurn": "low",
-    "unit": {
-      "type": "reps",
-      "sets": "3",
-      "duration": ""
-    }
+    "calorieBurn": "low"
   },
   {
     "id": 8,
     "name": "Low Bar Squat",
     "difficulty": ["begginer", "intermediate", "advanced"],
-    "muscleGroups": ["quads", "glutes"],
+    "muscleGroups": ["Quads", "Glutes"],
     "muscleArea": ["legs"],
-    "description": "lorem ipsum",
-    "image": "randomurl",
-    "video": "randomVideoUrl",
-    "intensity": 5,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 8,
     "isolation": "compound",
     "equipment": "barbell",
-    "calorieBurn": "low",
-    "unit": {
-      "type": "reps",
-      "sets": "3",
-      "duration": ""
-    }
+    "calorieBurn": "medium"
   },
   {
     "id": 9,
@@ -176,74 +122,232 @@
     "difficulty": ["begginer", "intermediate", "advanced"],
     "muscleGroups": ["quads", "glutes"],
     "muscleArea": ["legs"],
-    "description": "lorem ipsum",
-    "image": "randomurl",
-    "video": "randomVideoUrl",
-    "intensity": 5,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 9,
     "isolation": "compound",
     "equipment": "barbell",
-    "calorieBurn": "low",
-    "unit": {
-      "type": "reps",
-      "sets": "3",
-      "duration": ""
-    }
+    "calorieBurn": "low"
   },
   {
     "id": 10,
     "name": "Hanging Leg Raise",
     "difficulty": ["begginer", "intermediate", "advanced"],
-    "muscleGroups": ["abbs", "obliques", "adductors"],
+    "muscleGroups": ["Abbs", "Obliques", "Adductors"],
     "muscleArea": ["lower-front"],
-    "description": "lorem ipsum",
-    "image": "randomurl",
-    "video": "randomVideoUrl",
-    "intensity": 5,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 3,
     "isolation": "compound",
     "equipment": "body",
-    "calorieBurn": "low",
-    "unit": {
-      "type": "reps",
-      "sets": "3",
-      "duration": ""
-    }
+    "calorieBurn": "low"
   },
   {
     "id": 11,
     "name": "Double-Leg Calf Raise",
-    "difficulty": ["begginer", "intermediate", "advanced"],
-    "muscleGroups": ["calfs"],
+    "difficulty": ["begginer"],
+    "muscleGroups": ["Calfs"],
     "muscleArea": ["legs"],
-    "description": "lorem ipsum",
-    "image": "randomurl",
-    "video": "randomVideoUrl",
-    "intensity": 5,
-    "isolation": "compound",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 2,
+    "isolation": "isolation",
     "equipment": "body",
-    "calorieBurn": "low",
-    "unit": {
-      "type": "reps",
-      "sets": "3",
-      "duration": ""
-    }
+    "calorieBurn": "low"
   },
   {
     "id": 12,
     "name": "Farmer's Carry",
-    "difficulty": ["begginer", "intermediate", "advanced"],
-    "muscleGroups": ["forearms", "traps"],
+    "difficulty": ["intermediate", "advanced"],
+    "muscleGroups": ["Forearms", "Traps"],
     "muscleArea": ["upper-back", "arms"],
-    "description": "lorem ipsum",
-    "image": "randomurl",
-    "video": "randomVideoUrl",
-    "intensity": 5,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 4,
     "isolation": "compound",
     "equipment": "dumbbell",
-    "calorieBurn": "low",
-    "unit": {
-      "type": "reps",
-      "sets": "3",
-      "duration": ""
-    }
+    "calorieBurn": "low"
+  },
+  {
+    "id": 13,
+    "name": "Push Up",
+    "difficulty": ["begginer", "intermediate"],
+    "muscleGroups": ["Chest", "Shoulders", "Triceps"],
+    "muscleArea": ["upper-front", "arms"],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 6,
+    "isolation": "compound",
+    "equipment": "body",
+    "calorieBurn": "medium"
+  },
+  {
+    "id": 14,
+    "name": "Plank",
+    "difficulty": ["begginer"],
+    "muscleGroups": ["Abbs"],
+    "muscleArea": ["lower-front"],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 3,
+    "isolation": "isolation",
+    "equipment": "body",
+    "calorieBurn": "low"
+  },
+  {
+    "id": 15,
+    "name": "Wall Sit",
+    "difficulty": ["begginer", "intermediate"],
+    "muscleGroups": ["Quads"],
+    "muscleArea": ["legs"],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 4,
+    "isolation": "isolation",
+    "equipment": "body",
+    "calorieBurn": "low"
+  },
+  {
+    "id": 16,
+    "name": "Bent-Over Row",
+    "difficulty": ["intermediate", "advanced"],
+    "muscleGroups": ["Back", "Traps", "Biceps"],
+    "muscleArea": ["upper-back", "arms"],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 6,
+    "isolation": "compound",
+    "equipment": "barbell",
+    "calorieBurn": "low"
+  },
+  {
+    "id": 17,
+    "name": "Pistol Squat",
+    "difficulty": ["advanced"],
+    "muscleGroups": ["Quads", "Glutes"],
+    "muscleArea": ["legs", "lower-back"],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 7,
+    "isolation": "compound",
+    "equipment": "body",
+    "calorieBurn": "low"
+  },
+  {
+    "id": 18,
+    "name": "Burpee",
+    "difficulty": ["begginer", "intermediate", "advanced"],
+    "muscleGroups": ["Chest", "Shoulders", "Triceps", "Quads", "Calfs"],
+    "muscleArea": ["upper-front", "arms", "legs"],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 8,
+    "isolation": "compound",
+    "equipment": "body",
+    "calorieBurn": "high"
+  },
+  {
+    "id": 19,
+    "name": "Bicep Curl",
+    "difficulty": ["begginer", "intermediate"],
+    "muscleGroups": ["Biceps"],
+    "muscleArea": ["arms"],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 5,
+    "isolation": "isolation",
+    "equipment": "dumbbell",
+    "calorieBurn": "high"
+  },
+  {
+    "id": 20,
+    "name": "Over-Head Press",
+    "difficulty": ["intermediate", "advanced"],
+    "muscleGroups": ["Shoulders", "Triceps"],
+    "muscleArea": ["arms"],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 8,
+    "isolation": "compound",
+    "equipment": "barbell",
+    "calorieBurn": "medium"
+  },
+  {
+    "id": 21,
+    "name": "Lat Pulldown",
+    "difficulty": ["begginer", "intermediate"],
+    "muscleGroups": ["Lats", "Biceps"],
+    "muscleArea": ["upper-back", "arms"],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 6,
+    "isolation": "compound",
+    "equipment": "machine",
+    "calorieBurn": "medium"
+  },
+  {
+    "id": 22,
+    "name": "Dumbbell Bench Press",
+    "difficulty": ["begginer", "intermediate"],
+    "muscleGroups": ["Chest", "Shoulders", "Triceps"],
+    "muscleArea": ["upper-front", "arms"],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 6,
+    "isolation": "compound",
+    "equipment": "dumbbell",
+    "calorieBurn": "medium"
+  },
+  {
+    "id": 23,
+    "name": "Dumbbell Flyes",
+    "difficulty": ["intermediate", "advanced"],
+    "muscleGroups": ["Chest"],
+    "muscleArea": ["upper-front"],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 5,
+    "isolation": "isolation",
+    "equipment": "dumbbell",
+    "calorieBurn": "medium"
+  },
+  {
+    "id": 24,
+    "name": "Dips",
+    "difficulty": ["intermediate", "advanced"],
+    "muscleGroups": ["Chest", "Shoulders", "Triceps"],
+    "muscleArea": ["upper-front", "arms"],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 8,
+    "isolation": "compound",
+    "equipment": "body",
+    "calorieBurn": "medium"
+  },
+  {
+    "id": 24,
+    "name": "Lateral Raise",
+    "difficulty": ["begginer", "intermediate"],
+    "muscleGroups": ["Shoulders"],
+    "muscleArea": ["arms"],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 6,
+    "isolation": "isolation",
+    "equipment": "dumbbell",
+    "calorieBurn": "medium"
+  },
+  {
+    "id": 25,
+    "name": "Pushdown",
+    "difficulty": ["begginer"],
+    "muscleGroups": ["Triceps"],
+    "muscleArea": ["arms"],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut voluptatum at sint possimus, repellat provident corrupti! Ullam, minus adipisci?",
+
+    "intensity": 3,
+    "isolation": "isolation",
+    "equipment": "machine",
+    "calorieBurn": "high"
   }
 ]

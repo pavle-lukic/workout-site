@@ -20,7 +20,7 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #181926;
   position: absolute;
   left: 50%;
@@ -38,7 +38,7 @@ a {
   top: 40%;
   height: 2.5rem;
   padding: 15px;
-  width: 20rem;
+  width: 12rem;
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
@@ -96,7 +96,7 @@ a {
 
 .split.left {
   left: 0;
-  background: url(../img/1.jpg) center center no-repeat;
+  background: url(../img/8.jpg) center center no-repeat;
   background-size: cover;
 }
 

@@ -9,11 +9,11 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Montserrat', sans-serif;
   color: var(--light-gray);
 }
 
 #he {
-  height: 10000px;
   background-color: var(--container-bg-color);
 }
 #banner {
@@ -22,16 +22,37 @@
       rgba(0, 0, 0, 0),
       rgba(24, 25, 38, 1)
     ),
-    url('../img/1.jpg');
+    url('../img/6.jpg');
   background-size: cover;
   /* background-attachment: fixed; */
   background-position: center;
   display: block;
   height: 700px;
 }
+#news {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(24, 25, 38, 0.8),
+      rgba(24, 25, 38, 0.8)
+    ),
+    url('../img/7.jpg');
+  background-position: top;
+  background-size: cover;
+  background-attachment: fixed;
+}
+#workout {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(24, 25, 38, 0.8),
+      rgba(24, 25, 38, 0.8)
+    ),
+    url('../img/10.jpg');
+  background-position: top;
+  background-size: cover;
+  background-attachment: fixed;
+}
 
 .attention {
-  top: 20%;
   border-radius: 15px !important;
   border-width: medium !important;
 }
@@ -56,6 +77,9 @@
 
 .bg-dg {
   background-color: var(--ligher-color);
+}
+.bg-d {
+  background-color: var(--container-bg-color);
 }
 .bg-y {
   background-color: var(--light-yellow);

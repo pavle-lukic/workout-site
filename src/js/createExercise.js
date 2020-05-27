@@ -19,8 +19,8 @@ class Exercise {
 class UI {
   static startUI(obj) {
     fetch('../data/exercises.json')
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         ex.arr = data;
         ex.filteredArr = data;
         this.displayEx(obj.arr);
@@ -29,19 +29,19 @@ class UI {
   static changeImg() {
     // get all muscleGroup names and put them in 1 array
     const allArr = [];
-    ex.arr.forEach(ex => {
+    ex.arr.forEach((ex) => {
       allArr.push.apply(allArr, ex.muscleArea);
     });
     const setAllArr = [...new Set(allArr)].sort();
     // get all curently added muscleGroups and put them in array
     const arr = [];
-    addedEx.arr.forEach(ex => {
+    addedEx.arr.forEach((ex) => {
       arr.push.apply(arr, ex.muscleArea);
     });
     const setArr = [...new Set(arr)];
     setArr.sort();
     // compare the two arrays
-    const indexedArr = setArr.map(el => {
+    const indexedArr = setArr.map((el) => {
       return setAllArr.indexOf(el);
     });
     // concat the indexes into a string and change HTML
@@ -63,7 +63,7 @@ class UI {
     console.log(eqVal);
     let diffVal = diff.options[diff.selectedIndex].value;
 
-    const filteredArr = ex.arr.filter(exercise => {
+    const filteredArr = ex.arr.filter((exercise) => {
       if (diffVal == 'any') {
         diffVal = true;
       }
@@ -91,7 +91,7 @@ class UI {
   static displayEx(arr) {
     let html = '';
     const exArea = document.getElementById('exerciseArea');
-    arr.forEach(value => {
+    arr.forEach((value) => {
       html += `<div class="col-sm-12 col-lg-4 col-md-6 my-3">
     <div class="card bg-dg parYellow h-100 my-0 ">
       <div class="card-body h-100">
@@ -107,9 +107,9 @@ class UI {
     <li class="list-group-item bg-dg"><span class="parYellow">Muscle Groups: </span>${value.muscleGroups.join(
       ', '
     )}</li>
-    <li class="list-group-item bg-dg"><span class="parYellow">Calorie Burn: </span>${value.calorieBurn
-      .charAt(0)
-      .toUpperCase() + value.calorieBurn.substring(1)}</li>
+    <li class="list-group-item bg-dg"><span class="parYellow">Calorie Burn: </span>${
+      value.calorieBurn.charAt(0).toUpperCase() + value.calorieBurn.substring(1)
+    }</li>
     
     <li class="list-group-item bg-dg"><button href="#" class="btn bg clickable w-100 font-weight-bold bg-y" id=${
       value.id
@@ -125,7 +125,7 @@ class UI {
   static displayList(arr) {
     let html = '';
     const exList = document.getElementById('exerciseList');
-    arr.forEach(value => {
+    arr.forEach((value) => {
       html += `
       
       <li class="list-group-item h3 bg-dg py-2 d-flex justify-content-between align-items-center">${value.name}<button class="btn btn-danger" data="${value.id}">X</button></li>`;
@@ -141,9 +141,9 @@ class UI {
     let html = '';
     const info = document.getElementById('statistic');
     // function to give average value of calorie burn
-    const cal = function(item) {
+    const cal = function (item) {
       const calObj = {};
-      item.forEach(value => {
+      item.forEach((value) => {
         calObj[value.calorieBurn] = 1 + (calObj[value.calorieBurn] || 0);
       });
       let max = 0;
@@ -159,11 +159,11 @@ class UI {
       }
       return val.toUpperCase();
     };
-    const ex = function(item) {
+    const ex = function (item) {
       const exObj = {};
       let html = '';
-      item.forEach(value => {
-        value.muscleGroups.forEach(muscle => {
+      item.forEach((value) => {
+        value.muscleGroups.forEach((muscle) => {
           exObj[muscle] = 1 + (exObj[muscle] || 0);
         });
       });
@@ -175,10 +175,9 @@ class UI {
       for (let key in exObj) {
         if (exObj.hasOwnProperty(key)) {
           html += `<li class="list-group-item d-flex justify-content-between align-items-center bg-dg h5" >
-          - ${key.charAt(0).toUpperCase() +
-            key.substring(1)}: <span class="parYellow font-weight-bold">${
-            exObj[key]
-          }</span>
+          - ${
+            key.charAt(0).toUpperCase() + key.substring(1)
+          }: <span class="parYellow font-weight-bold">${exObj[key]}</span>
         </li>`;
         }
       }
@@ -186,9 +185,9 @@ class UI {
     };
 
     // calc average intensity of exercise
-    const intens = function(arr) {
+    const intens = function (arr) {
       let totalIntensity = 0;
-      arr.forEach(value => {
+      arr.forEach((value) => {
         totalIntensity += value.intensity;
       });
       if (totalIntensity / arr.length < 3) {
@@ -222,10 +221,10 @@ class UI {
   }
   // Delegate the events after they have been writen in the DOM
   static giveEventMain(values) {
-    values.forEach(value => {
+    values.forEach((value) => {
       document
         .querySelector('#exerciseArea')
-        .addEventListener('click', function(e) {
+        .addEventListener('click', function (e) {
           if (e.target && e.target.id == `${value.id}`) {
             addedEx.addEx(value);
           }
@@ -234,10 +233,10 @@ class UI {
   }
   // give remove event to the already added Exercises
   static giveEventList(values) {
-    values.forEach(value => {
+    values.forEach((value) => {
       document
         .querySelector('#exerciseList')
-        .addEventListener('click', function(e) {
+        .addEventListener('click', function (e) {
           if (e.target && e.target.getAttribute('data') == `${value.id}`) {
             addedEx.removeEx(value);
           }
@@ -249,7 +248,7 @@ class UI {
     ex.filteredArr = ex.arr;
     let inputs = info.target.value.toLowerCase();
 
-    ex.filteredArr = ex.filteredArr.filter(values => {
+    ex.filteredArr = ex.filteredArr.filter((values) => {
       return values.name.toLowerCase().indexOf(inputs) > -1;
     });
     this.displayEx(ex.filteredArr);
@@ -260,10 +259,10 @@ const ex = new Exercise([]);
 const addedEx = new Exercise([]);
 const searchBar = document.getElementById('searchBar');
 document.addEventListener('DOMContentLoaded', UI.startUI(ex));
-document.getElementById('filter').addEventListener('click', e => {
+document.getElementById('filter').addEventListener('click', (e) => {
   e.preventDefault();
   UI.displayFilterArea();
 });
-searchBar.addEventListener('input', function(e) {
+searchBar.addEventListener('input', function (e) {
   UI.getFilterInputs(e);
 });

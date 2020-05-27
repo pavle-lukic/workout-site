@@ -214,9 +214,6 @@ class UI {
    Following Muscle Groups are included:
   </li>
   ${ex(arr)}`;
-
-    // function to give intensity value done
-    // function to get number of each musle groups affected
     info.innerHTML = html;
   }
   // Delegate the events after they have been writen in the DOM

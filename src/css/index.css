@@ -13,6 +13,12 @@
   color: var(--light-gray);
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 #he {
   background-color: var(--container-bg-color);
 }

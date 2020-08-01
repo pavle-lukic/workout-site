@@ -60,7 +60,6 @@ class UI {
     let calVal = cal.options[cal.selectedIndex].value;
 
     let eqVal = eq.options[eq.selectedIndex].value;
-    console.log(eqVal);
     let diffVal = diff.options[diff.selectedIndex].value;
 
     const filteredArr = ex.arr.filter((exercise) => {
@@ -76,7 +75,6 @@ class UI {
       if (movVal == 'any') {
         movVal = true;
       }
-      console.log(movVal, calVal, eqVal, diffVal);
       return (
         (exercise.isolation == movVal || movVal == true) &&
         (exercise.calorieBurn == calVal || calVal == true) &&
@@ -84,7 +82,6 @@ class UI {
         (exercise.difficulty.indexOf(diffVal) != -1 || diffVal == true)
       );
     });
-    console.log(filteredArr);
     this.displayEx(filteredArr);
   }
   // display all the exercises

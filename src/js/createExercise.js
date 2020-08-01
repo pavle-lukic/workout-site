@@ -69,8 +69,10 @@ class UI {
     let calVal = cal.options[cal.selectedIndex].value;
     let eqVal = eq.options[eq.selectedIndex].value;
     let diffVal = diff.options[diff.selectedIndex].value;
+    // get all values for filtering all exercises
 
     const filteredArr = ex.excercises.filter((exercise) => {
+      // checks if any is selected as a filter which would show all exercises containing that category
       if (diffVal == 'any') {
         diffVal = true;
       }
@@ -123,6 +125,7 @@ class UI {
     </div>`;
     });
     exArea.innerHTML = html;
+    // we need to manualy give events to made cards after they render
     this.giveEventMain(arr);
   }
   static displayList(arr) {
@@ -145,11 +148,12 @@ class UI {
     const info = document.getElementById('statistic');
     const cal = function (item) {
       const calObj = {};
+      let max = 0;
+      let val = '';
+      // compare number of exercises with different calorie burn rate and puts up the most common one
       item.forEach((value) => {
         calObj[value.calorieBurn] = 1 + (calObj[value.calorieBurn] || 0);
       });
-      let max = 0;
-      let val = '';
       if (Object.keys(calObj).length === 0) {
         val = 'None';
       }
@@ -191,6 +195,7 @@ class UI {
       arr.forEach((value) => {
         totalIntensity += value.intensity;
       });
+      // algorithm for calculating what kind of intensity the workout is, usualy the more the exercises the less the intensity it is.
       if (totalIntensity / arr.length < 3) {
         return 'Low';
       } else if (totalIntensity / arr.length < 7) {
@@ -217,6 +222,7 @@ class UI {
     info.innerHTML = html;
   }
   static giveEventMain(values) {
+    // we need to give events to parts of dom after they render
     values.forEach((value) => {
       document
         .querySelector('#exerciseArea')
@@ -228,6 +234,7 @@ class UI {
     });
   }
   static giveEventList(values) {
+    // we need to give events to parts of dom after they render
     values.forEach((value) => {
       document
         .querySelector('#exerciseList')
@@ -241,7 +248,7 @@ class UI {
   static getFilterInputs(info) {
     ex.filteredExcercises = ex.excercises;
     let inputs = info.target.value.toLowerCase();
-
+    // pull all the information for filtering
     ex.filteredExcercises = ex.filteredExcercises.filter((values) => {
       return values.name.toLowerCase().indexOf(inputs) > -1;
     });

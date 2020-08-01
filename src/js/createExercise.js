@@ -1,53 +1,63 @@
 class Exercise {
   constructor(arr) {
-    this.arr = arr;
-    this.filteredArr = arr;
+    this.excercises = arr;
+    this.filteredExcercises = arr;
   }
   addEx(ex) {
-    if (this.arr.indexOf(ex) == -1) {
-      this.arr.push(ex);
-      UI.displayList(addedEx.arr);
+    // adds an exercise if it's not already added
+    if (this.excercises.indexOf(ex) == -1) {
+      this.excercises.push(ex);
+      // renders the added exercises after
+      UI.displayList(addedEx.excercises);
     }
   }
   removeEx(ex) {
-    if (this.arr.indexOf(ex) != -1) {
-      this.arr.splice(this.arr.indexOf(ex), 1);
-      UI.displayList(addedEx.arr);
+    // removes an added exercise from plan
+    if (this.excercises.indexOf(ex) != -1) {
+      this.excercises.splice(this.excercises.indexOf(ex), 1);
+      // renders the remaining exercises
+      UI.displayList(addedEx.excercises);
     }
   }
 }
 class UI {
   static startUI(obj) {
+    // gets all exercises from JSON file and adds it to passed object
     fetch('../data/exercises.json')
       .then((res) => res.json())
       .then((data) => {
-        ex.arr = data;
-        ex.filteredArr = data;
-        this.displayEx(obj.arr);
+        obj.excercises = data;
+        obj.filteredExcercises = data;
+        // after fetching exercises display them on page
+        this.displayEx(obj.excercises);
       });
   }
   static changeImg() {
-    // get all muscleGroup names and put them in 1 array
-    const allArr = [];
-    ex.arr.forEach((ex) => {
-      allArr.push.apply(allArr, ex.muscleArea);
+    const allMuscleAreas = [];
+    const addedMuscleAreas = [];
+    ex.excercises.forEach((single) => {
+      // add every single muscle area to an array
+      allMuscleAreas.push.apply(allMuscleAreas, single.muscleArea);
     });
-    const setAllArr = [...new Set(allArr)].sort();
-    // get all curently added muscleGroups and put them in array
-    const arr = [];
-    addedEx.arr.forEach((ex) => {
-      arr.push.apply(arr, ex.muscleArea);
+    addedEx.excercises.forEach((single) => {
+      // get all muscle areas from currently selected exercises
+      addedMuscleAreas.push.apply(addedMuscleAreas, single.muscleArea);
     });
-    const setArr = [...new Set(arr)];
-    setArr.sort();
-    // compare the two arrays
-    const indexedArr = setArr.map((el) => {
-      return setAllArr.indexOf(el);
+    // remove all duplace values from arrays so only unique ones remain
+    // sort so that the same muscle group always has the same index in the
+    const allUniqueMuscleAreas = [...new Set(allMuscleAreas)].sort();
+    const addedUniqueMuscleAreas = [...new Set(addedMuscleAreas)].sort();
+
+    const indexedMuscleAreas = addedUniqueMuscleAreas.map((el) => {
+      // find the overlaping muscle areas and create an array from indexes(easier to map to corresponding image with numbers)
+      return allUniqueMuscleAreas.indexOf(el);
     });
-    // concat the indexes into a string and change HTML
     document
       .getElementById('bodyImage')
-      .setAttribute('src', `../src/img/exImage/body${indexedArr.join('')}.png`);
+      .setAttribute(
+        'src',
+        `../src/img/exImage/body${indexedMuscleAreas.join('')}.png`
+      );
   }
 
   static displayFilterArea() {
@@ -56,13 +66,11 @@ class UI {
     const eq = document.getElementById('equipment');
     const diff = document.getElementById('diff');
     let movVal = mov.options[mov.selectedIndex].value;
-
     let calVal = cal.options[cal.selectedIndex].value;
-
     let eqVal = eq.options[eq.selectedIndex].value;
     let diffVal = diff.options[diff.selectedIndex].value;
 
-    const filteredArr = ex.arr.filter((exercise) => {
+    const filteredArr = ex.excercises.filter((exercise) => {
       if (diffVal == 'any') {
         diffVal = true;
       }
@@ -84,7 +92,6 @@ class UI {
     });
     this.displayEx(filteredArr);
   }
-  // display all the exercises
   static displayEx(arr) {
     let html = '';
     const exArea = document.getElementById('exerciseArea');
@@ -118,7 +125,6 @@ class UI {
     exArea.innerHTML = html;
     this.giveEventMain(arr);
   }
-  // display the added exercises
   static displayList(arr) {
     let html = '';
     const exList = document.getElementById('exerciseList');
@@ -137,7 +143,6 @@ class UI {
   static displayInformation(arr) {
     let html = '';
     const info = document.getElementById('statistic');
-    // function to give average value of calorie burn
     const cal = function (item) {
       const calObj = {};
       item.forEach((value) => {
@@ -181,7 +186,6 @@ class UI {
       return html;
     };
 
-    // calc average intensity of exercise
     const intens = function (arr) {
       let totalIntensity = 0;
       arr.forEach((value) => {
@@ -195,7 +199,6 @@ class UI {
         return 'High';
       } else return 'None';
     };
-    // formating the html
     html += ` <li class="list-group-item d-flex justify-content-between align-items-center bg-dg h5">
     Number of selected exercises:<span class="parYellow">${arr.length}</span>
   </li>
@@ -213,7 +216,6 @@ class UI {
   ${ex(arr)}`;
     info.innerHTML = html;
   }
-  // Delegate the events after they have been writen in the DOM
   static giveEventMain(values) {
     values.forEach((value) => {
       document
@@ -225,7 +227,6 @@ class UI {
         });
     });
   }
-  // give remove event to the already added Exercises
   static giveEventList(values) {
     values.forEach((value) => {
       document
@@ -237,15 +238,14 @@ class UI {
         });
     });
   }
-  // filter displayed exercices based on search inputs
   static getFilterInputs(info) {
-    ex.filteredArr = ex.arr;
+    ex.filteredExcercises = ex.excercises;
     let inputs = info.target.value.toLowerCase();
 
-    ex.filteredArr = ex.filteredArr.filter((values) => {
+    ex.filteredExcercises = ex.filteredExcercises.filter((values) => {
       return values.name.toLowerCase().indexOf(inputs) > -1;
     });
-    this.displayEx(ex.filteredArr);
+    this.displayEx(ex.filteredExcercises);
   }
 }
 
